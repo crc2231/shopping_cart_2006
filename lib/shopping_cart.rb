@@ -30,4 +30,8 @@ class ShoppingCart
     total_number_of_products >= @capacity.to_i
   end
 
+  def products_by_category(category_param)
+    @products.find_all {|product| product.category == category_param}
+  end
+
 end
