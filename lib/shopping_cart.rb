@@ -14,5 +14,20 @@ class ShoppingCart
     @products << product
   end
 
+  def details
+    details = {name: "#{@name}", capacity: @capacity.to_i}
+  end
+
+  def total_number_of_products
+    sum = 0
+    @products.each do |product|
+      sum = sum + product.quantity.to_i
+    end
+    sum
+  end
+
+  def is_full?
+    total_number_of_products >= @capacity.to_i
+  end
 
 end
