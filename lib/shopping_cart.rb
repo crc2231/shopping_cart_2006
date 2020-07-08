@@ -34,4 +34,9 @@ class ShoppingCart
     @products.find_all {|product| product.category == category_param}
   end
 
+  def percentage_occupied
+    percent = (total_number_of_products / @capacity.to_f) * 100
+    percent.round(2)
+  end
+
 end
