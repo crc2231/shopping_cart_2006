@@ -43,12 +43,12 @@ class ShoppingCart
     @products.sort_by {|product| product.quantity.to_i}
   end
 
-  # def product_breakdown
-  #   breakdown = {
-  #     paper: @products.find_all {|product| product.category == :paper},
-  #     meat: @products.find_all {|product| product.category == :meat}
-  #     produce: @products.find_all {|product| product.category == :produce}
-  #   }
-  # end
+  def product_breakdown
+    breakdown = {
+      paper: [@products.find_all {|product| product.category == :paper}],
+      meat: [@products.find_all {|product| product.category == :meat}],
+      produce: [@products.find_all {|product| product.category == :produce}]
+    }
+  end
 
 end

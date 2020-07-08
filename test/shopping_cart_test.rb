@@ -129,6 +129,7 @@ class ShoppingCartTest < Minitest::Test
     cart.add_product(product2)
     cart.add_product(product3)
     cart.add_product(product4)
+    require "pry"; binding.pry
     assert_equal 'apples', cart.product_breakdown[:produce].name
   end
 
